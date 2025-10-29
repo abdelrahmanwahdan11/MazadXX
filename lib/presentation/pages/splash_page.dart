@@ -1,35 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/routes/app_routes.dart';
+import '../controllers/splash_controller.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashPage extends GetView<SplashController> {
   const SplashPage({super.key});
-
-  @override
-  State<SplashPage> createState() => _SplashPageState();
-}
-
-class _SplashPageState extends State<SplashPage> {
-  @override
-  void initState() {
-    super.initState();
-    Future<void>.delayed(const Duration(milliseconds: 800), () {
-      Get.offAllNamed(AppRoutes.home);
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text('app_name'.tr, style: Theme.of(context).textTheme.displayLarge),
-            const SizedBox(height: 16),
-            const CircularProgressIndicator(),
-          ],
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Color(0xFF1FA2FF), Color(0xFF12D8FA), Color(0xFFA6FFCB)],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('app_name'.tr, style: Theme.of(context).textTheme.displayLarge?.copyWith(color: Colors.white)),
+              const SizedBox(height: 16),
+              const CircularProgressIndicator.adaptive(),
+            ],
+          ),
         ),
       ),
     );
