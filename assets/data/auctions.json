@@ -1,0 +1,40 @@
+[
+  {
+    "id": "a_1001",
+    "title": "iPhone 14 Pro 256GB",
+    "category": "Phones",
+    "images": ["assets/images/auctions/iphone14.jpg"],
+    "condition": "Like new",
+    "description": "Pristine iPhone 14 Pro with box and accessories.",
+    "location": "Doha",
+    "start_price": 450.0,
+    "buy_now_price": 799.0,
+    "current_bid": 620.0,
+    "end_time": "2025-11-01T20:30:00",
+    "seller_id": "u_01",
+    "watchers": 24,
+    "reviews": [
+      { "user": "Sara", "stars": 5, "text": "Fast shipping and perfect condition", "date": "2024-04-02" }
+    ],
+    "avg_rating": 4.9
+  },
+  {
+    "id": "a_1002",
+    "title": "Rolex Submariner 116610LN",
+    "category": "Watches",
+    "images": ["assets/images/auctions/rolex.jpg"],
+    "condition": "Excellent",
+    "description": "Full set, recently serviced, authentic guarantee included.",
+    "location": "Riyadh",
+    "start_price": 5500.0,
+    "buy_now_price": 7200.0,
+    "current_bid": 6000.0,
+    "end_time": "2025-11-04T19:00:00",
+    "seller_id": "u_02",
+    "watchers": 12,
+    "reviews": [
+      { "user": "Omar", "stars": 4, "text": "Smooth communication.", "date": "2024-03-22" }
+    ],
+    "avg_rating": 4.6
+  }
+]

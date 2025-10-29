@@ -1,0 +1,6 @@
+[
+  { "id": "c1", "name": "Phones", "icon": "IconlyLight.call" },
+  { "id": "c2", "name": "Laptops", "icon": "IconlyLight.work" },
+  { "id": "c3", "name": "Watches", "icon": "IconlyLight.time_circle" },
+  { "id": "c4", "name": "Music", "icon": "IconlyLight.headphone" }
+]
