@@ -45,7 +45,7 @@ class AppTheme {
       ),
       navigationBarTheme: NavigationBarThemeData(
         indicatorColor: colorScheme.primary.withOpacity(0.12),
-        labelTextStyle: WidgetStateProperty.all(textTheme.labelSmall),
+        labelTextStyle: MaterialStatePropertyAll<TextStyle?>(textTheme.labelSmall),
       ),
       navigationRailTheme: NavigationRailThemeData(
         indicatorColor: colorScheme.primary.withOpacity(0.12),

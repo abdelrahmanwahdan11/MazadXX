@@ -60,7 +60,7 @@ class WantedCard extends StatelessWidget {
     );
 
     return MouseRegion(
-      cursor: onInfo != null ? MaterialStateMouseCursor.clickable : MouseCursor.defer,
+      cursor: onInfo != null ? SystemMouseCursors.click : SystemMouseCursors.basic,
       child: Material(
         color: Colors.transparent,
         borderRadius: borderRadius,
