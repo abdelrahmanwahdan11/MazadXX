@@ -1,0 +1,26 @@
+[
+  {
+    "id": "w_2001",
+    "title": "MacBook Air M2",
+    "category": "Laptops",
+    "images": ["assets/images/wanted/macbook.jpg"],
+    "specs": "Prefer 16GB RAM, 512GB SSD",
+    "target_price": 900.0,
+    "location": "Rawabi",
+    "requester_id": "u_07",
+    "offers": [
+      { "id": "of_1", "wanted_id": "w_2001", "user_id": "u_02", "amount": 920.0, "message": "Includes sleeve", "time": "2024-05-01T09:00:00" }
+    ]
+  },
+  {
+    "id": "w_2002",
+    "title": "Vintage Fender Stratocaster",
+    "category": "Music",
+    "images": ["assets/images/wanted/strat.jpg"],
+    "specs": "Sunburst finish, pre-1980",
+    "target_price": 2200.0,
+    "location": "Amman",
+    "requester_id": "u_05",
+    "offers": []
+  }
+]

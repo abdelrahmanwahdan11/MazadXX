@@ -1,0 +1,6 @@
+[
+  { "id": "u_01", "name": "Khalid", "avatar": "assets/images/avatars/khalid.png", "rating": 4.9, "stats": { "wins": 12, "bids": 48 } },
+  { "id": "u_02", "name": "Layla", "avatar": "assets/images/avatars/layla.png", "rating": 4.7, "stats": { "wins": 5, "bids": 22 } },
+  { "id": "u_05", "name": "Noura", "avatar": "assets/images/avatars/noura.png", "rating": 4.5, "stats": { "wins": 3, "bids": 9 } },
+  { "id": "u_07", "name": "Ziad", "avatar": "assets/images/avatars/ziad.png", "rating": 4.3, "stats": { "wins": 1, "bids": 6 } }
+]
