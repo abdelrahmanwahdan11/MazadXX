@@ -25,11 +25,7 @@ class ProfilePage extends GetView<ProfileController> {
               GlassCard(
                 child: Row(
                   children: [
-                    CircleAvatar(
-                      radius: 36,
-                      backgroundImage: AssetImage(user.avatar),
-                      onBackgroundImageError: (_, __) {},
-                    ),
+                    _ProfileAvatar(name: user.name, assetPath: user.avatar),
                     const SizedBox(width: 16),
                     Expanded(
                       child: Column(
@@ -113,6 +109,72 @@ class ProfilePage extends GetView<ProfileController> {
             ],
           );
         }),
+      ),
+    );
+  }
+}
+
+class _ProfileAvatar extends StatelessWidget {
+  const _ProfileAvatar({required this.name, required this.assetPath});
+
+  final String name;
+  final String assetPath;
+
+  @override
+  Widget build(BuildContext context) {
+    final initials = name
+        .trim()
+        .split(RegExp(r'\s+'))
+        .where((segment) => segment.isNotEmpty)
+        .take(2)
+        .map((segment) => segment.substring(0, 1).toUpperCase())
+        .join();
+
+    final placeholder = _AvatarFallback(initials: initials);
+
+    if (assetPath.trim().isEmpty) {
+      return placeholder;
+    }
+
+    return Container(
+      width: 72,
+      height: 72,
+      decoration: const BoxDecoration(shape: BoxShape.circle),
+      clipBehavior: Clip.antiAlias,
+      child: Image.asset(
+        assetPath,
+        fit: BoxFit.cover,
+        errorBuilder: (_, __, ___) => placeholder,
+      ),
+    );
+  }
+}
+
+class _AvatarFallback extends StatelessWidget {
+  const _AvatarFallback({required this.initials});
+
+  final String initials;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 72,
+      height: 72,
+      alignment: Alignment.center,
+      decoration: const BoxDecoration(
+        shape: BoxShape.circle,
+        gradient: LinearGradient(
+          colors: [Color(0xFF1FA2FF), Color(0xFF12D8FA), Color(0xFFA6FFCB)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+      ),
+      child: Text(
+        initials,
+        style: Theme.of(context)
+            .textTheme
+            .headlineSmall
+            ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
       ),
     );
   }
