@@ -1,30 +1,32 @@
-class User {
-  const User({
-    required this.id,
-    required this.name,
-    required this.avatar,
-    required this.rating,
-    required this.wins,
-    required this.bids,
+import '../../domain/entities/user.dart';
+
+class UserModel extends User {
+  const UserModel({
+    required super.id,
+    required super.name,
+    required super.avatar,
+    required super.rating,
+    required super.stats,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) {
-    final stats = json['stats'] as Map<String, dynamic>? ?? {};
-    return User(
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+    final stats = (json['stats'] as Map<String, dynamic>? ?? <String, dynamic>{}).map(
+      (key, value) => MapEntry(key, value),
+    );
+    return UserModel(
       id: json['id'] as String,
       name: json['name'] as String,
       avatar: json['avatar'] as String? ?? 'assets/images/avatars/default.png',
       rating: (json['rating'] as num?)?.toDouble() ?? 0,
-      wins: (stats['wins'] as num?)?.toInt() ?? 0,
-      bids: (stats['bids'] as num?)?.toInt() ?? 0,
+      stats: stats,
     );
   }
 
-  final String id;
-  final String name;
-  final String avatar;
-  final double rating;
-  final int wins;
-  final int bids;
-
+  Map<String, dynamic> toJson() => <String, dynamic>{
+        'id': id,
+        'name': name,
+        'avatar': avatar,
+        'rating': rating,
+        'stats': stats,
+      };
 }

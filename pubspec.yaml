@@ -10,7 +10,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.6
   get: ^4.6.6
   google_fonts: ^6.2.1
   shared_preferences: ^2.2.3
@@ -28,4 +27,5 @@ flutter:
     - assets/images/onboarding/
     - assets/images/auctions/
     - assets/images/wanted/
+    - assets/images/avatars/
     - assets/data/
